@@ -1,0 +1,25 @@
+body { background: #eee }
+header  { grid-area: h; background: orange }
+nav     { grid-area: n; background: yellow }
+main    { grid-area: m; background: white }
+aside   { grid-area: a; background: silver }
+footer  { grid-area: f; background: red }
+
+.container { 
+    display: grid;
+    grid-template-rows: 100px 50px 400px 90px 40px;
+    grid-template-areas: 'h'  'n'   'm'  'a'  'f';
+}
+
+@media only screen and (min-width: 768px) { 
+    .container { 
+        max-width: 1000px; 
+        margin: auto;
+        grid-template-rows: 100px 400px 40px;
+        grid-template-columns: 20% auto 160px;
+        grid-template-areas:    'n   h    h'    
+                                'n   m    a'   
+                                'n   f    a'
+    }
+
+}

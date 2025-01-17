@@ -1,0 +1,25 @@
+body { background: #eee }
+header { background: orange }
+nav { background: yellow }
+main { background: white }
+aside { background: silver }
+footer { background: red }
+
+.container { 
+    display: grid;
+    grid-template-rows: 100px 50px 400px 90px 40px;
+}
+
+@media only screen and (min-width: 768px) { 
+    .container { 
+        max-width: 1000px; 
+        margin: auto;
+        grid-template-columns: 20% auto 160px;
+        grid-template-rows: 100px 400px 40px;
+    }
+    header { grid-area: 1 / 2 / span 1 / span 2 }
+    nav {    grid-area: 1 / 1 / span 3 / span 1 }
+    main {   grid-area: 2 / 2 / 3 / 3  }
+    aside {  grid-area: 2 / 3 / span 2 / span 1 }
+    footer { grid-area: 3 / 2 / 4 / 3 }
+}
